@@ -125,10 +125,12 @@
             position: absolute;
             top: 70px;
             right: 30px;
+            /* Default for desktop */
             background: #111;
             border: 1px solid #222;
             border-radius: 10px;
             display: none;
+            z-index: 1001;
         }
 
         .dropdown a {
@@ -401,6 +403,8 @@
             padding: 30px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             margin-top: 40px;
+            overflow-x: auto;
+            /* Allow horizontal scroll on mobile */
         }
 
         .impact-table {
@@ -644,6 +648,13 @@
                 /* Hide time on small screens to prevent overlap */
             }
 
+            /* Dropdown on Mobile - Left Side */
+            .dropdown {
+                right: auto;
+                left: 20px;
+                width: 200px;
+            }
+
             /* CTA Adjustment */
             .sticky-cta {
                 padding: 12px 25px;
@@ -880,6 +891,7 @@
             <span></span>
         </div>
         <div class="dropdown" id="menu">
+            <a href="#" onclick="window.scrollTo(0,0); toggleMenu()">About Me</a>
             <a href="#certifications" data-section="certifications" onclick="toggleMenu()">Certifications</a>
             <a href="#tools" data-section="tools" onclick="toggleMenu()">Tools</a>
             <a href="#skills" data-section="skills" onclick="toggleMenu()">Core Skills</a>
