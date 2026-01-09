@@ -564,7 +564,10 @@
             width: 250px;
             height: 250px;
             border-radius: 50%;
-            object-fit: cover;
+            object-fit: contain;
+            /* Shows full image ("zoomed out") */
+            background-color: #ffffff;
+            /* Fill empty space with white background */
             border: 4px solid var(--amazon-orange);
             box-shadow: 0 0 30px rgba(255, 153, 0, 0.3);
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -589,17 +592,63 @@
         }
 
         @media (max-width: 768px) {
-            .hero-content {
-                flex-direction: column-reverse;
-                /* Text on bottom, image on top for mobile */
-                text-align: center;
-                gap: 30px;
+
+            /* Global Layout Adjustments */
+            section {
+                padding: 60px 20px;
             }
 
+            /* Typography Scaling */
+            .hero h1 {
+                font-size: 3.5rem;
+                line-height: 1.1;
+            }
+
+            .hero h3 {
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+            }
+
+            /* Hero Layout */
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 30px;
+                padding-top: 20px;
+            }
+
+            /* Profile Picture Sizing */
+            .profile-pic {
+                width: 200px;
+                height: 200px;
+            }
+
+            /* Docked State - Move to Left on Mobile to avoid overlapping CTA */
             .profile-pic.docked {
-                right: 180px;
-                /* Adjust for smaller screen button size if needed */
-                bottom: 35px;
+                width: 45px;
+                height: 45px;
+                right: auto;
+                /* Reset right positioning */
+                left: 20px;
+                /* Move to left side */
+                bottom: 30px;
+            }
+
+            /* Navbar Tweak */
+            .navbar {
+                padding: 0 15px;
+            }
+
+            .nav-time {
+                display: none;
+                /* Hide time on small screens to prevent overlap */
+            }
+
+            /* CTA Adjustment */
+            .sticky-cta {
+                padding: 12px 25px;
+                bottom: 30px;
+                right: 20px;
             }
         }
 
