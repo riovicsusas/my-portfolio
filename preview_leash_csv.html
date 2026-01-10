@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #111;
+            color: #eee;
+            padding: 40px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #FF9900;
+            font-family: 'Fjalla One', sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+            font-size: 0.85rem;
+        }
+
+        th {
+            background: #222;
+            color: #FF9900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        tr:hover {
+            background: #222;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            border: 1px solid #444;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #444;
+        }
+
+        .btn-download {
+            background: #FF9900;
+            color: #000;
+            border-color: #FF9900;
+            padding: 15px 30px;
+            font-size: 1rem;
+        }
+
+        .btn-download:hover {
+            background: #e68a00;
+            transform: scale(1.05);
+        }
+
+        .btn-back {
+            background: transparent;
+            border: 1px solid #555;
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="history.back()" class="btn btn-back">← Back to Report</button>
+
+    <div class="controls" style="margin-top: 20px;">
+        <h1>Campaign Structure Preview (Dog Leash)</h1>
+        <a href="Dog_Leash_Campaign.csv" download class="btn btn-download">📥 Download Full CSV</a>
+    </div>
+
+    <p style="color: #888; font-size: 0.9rem;">Showing 'Attack & Defense' groups for the Dog Leash Campaign.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Campaign Name</th>
+                <th>Ad Group</th>
+                <th>Keyword</th>
+                <th>Match</th>
+                <th>Bid</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>SP - Manual - Dog Leash - Gap Fill</td>
+                <td>Attack (Heavy Duty)</td>
+                <td>heavy duty dog leash</td>
+                <td>Exact</td>
+                <td>$2.50</td>
+            </tr>
+            <tr>
+                <td>SP - Manual - Dog Leash - Gap Fill</td>
+                <td>Attack (Heavy Duty)</td>
+                <td>strong dog leash for large dogs</td>
+                <td>Exact</td>
+                <td>$2.85</td>
+            </tr>
+            <tr>
+                <td>SP - Manual - Dog Leash - Gap Fill</td>
+                <td>Attack (Heavy Duty)</td>
+                <td>reflective dog leash</td>
+                <td>Exact</td>
+                <td>$2.20</td>
+            </tr>
+            <tr>
+                <td>SP - Manual - Dog Leash - Gap Fill</td>
+                <td>Attack (Heavy Duty)</td>
+                <td>anti pull dog leash</td>
+                <td>Exact</td>
+                <td>$2.40</td>
+            </tr>
+            <tr>
+                <td>SP - Manual - Dog Leash - Gap Fill</td>
+                <td>Defense (Standard)</td>
+                <td>dog leash</td>
+                <td>Phrase</td>
+                <td>$1.10</td>
+            </tr>
+            <tr>
+                <td>SP - Manual - Dog Leash - Gap Fill</td>
+                <td>Defense (Standard)</td>
+                <td>6ft dog leash</td>
+                <td>Phrase</td>
+                <td>$1.25</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

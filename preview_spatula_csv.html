@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #111;
+            color: #eee;
+            padding: 40px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #FF9900;
+            font-family: 'Fjalla One', sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+            font-size: 0.85rem;
+        }
+
+        th {
+            background: #222;
+            color: #FF9900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        tr:hover {
+            background: #222;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            border: 1px solid #444;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #444;
+        }
+
+        .btn-download {
+            background: #FF9900;
+            color: #000;
+            border-color: #FF9900;
+            padding: 15px 30px;
+            font-size: 1rem;
+        }
+
+        .btn-download:hover {
+            background: #e68a00;
+            transform: scale(1.05);
+        }
+
+        .btn-back {
+            background: transparent;
+            border: 1px solid #555;
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="history.back()" class="btn btn-back">← Back to Report</button>
+
+    <div class="controls" style="margin-top: 20px;">
+        <h1>Campaign Structure Preview (Spatula)</h1>
+        <a href="Campaign_Structure.csv" download class="btn btn-download">📥 Download Full CSV</a>
+    </div>
+
+    <p style="color: #888; font-size: 0.9rem;">Showing top rows of the Silicon Spatula Bulk File structure.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Campaign Name</th>
+                <th>Ad Group</th>
+                <th>Keyword</th>
+                <th>Match</th>
+                <th>Bid</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>SP - Manual - Spatula - KW Graduation</td>
+                <td>Exact - High Intent</td>
+                <td>heat resistant silicone spatula 600 degrees</td>
+                <td>Exact</td>
+                <td>$2.45</td>
+            </tr>
+            <tr>
+                <td>SP - Manual - Spatula - KW Graduation</td>
+                <td>Exact - High Intent</td>
+                <td>spatula set for non stick cookware</td>
+                <td>Exact</td>
+                <td>$2.20</td>
+            </tr>
+            <tr>
+                <td>SP - Manual - Spatula - KW Graduation</td>
+                <td>Exact - High Intent</td>
+                <td>seamless one piece spatula design</td>
+                <td>Exact</td>
+                <td>$2.15</td>
+            </tr>
+            <tr>
+                <td>SP - Manual - Spatula - KW Graduation</td>
+                <td>Exact - High Intent</td>
+                <td>bpa free kitchen utensils silicone</td>
+                <td>Exact</td>
+                <td>$1.90</td>
+            </tr>
+            <tr>
+                <td>SP - Manual - Spatula - KW Graduation</td>
+                <td>Exact - High Intent</td>
+                <td>heavy duty rubber spatula for baking</td>
+                <td>Exact</td>
+                <td>$2.30</td>
+            </tr>
+            <tr>
+                <td>SP - Manual - Spatula - KW Graduation</td>
+                <td>Phrase - Discovery</td>
+                <td>silicone spatula set</td>
+                <td>Phrase</td>
+                <td>$1.60</td>
+            </tr>
+            <tr>
+                <td>SP - Manual - Spatula - KW Graduation</td>
+                <td>Phrase - Discovery</td>
+                <td>kitchen spatula red</td>
+                <td>Phrase</td>
+                <td>$1.45</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

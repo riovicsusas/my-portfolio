@@ -255,6 +255,70 @@
         .featured {
             border: 1px solid #333;
             background: linear-gradient(180deg, #141414, #0f0f0f);
+            margin-bottom: 40px;
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .case-card {
+            background: #141414;
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .case-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--amazon-orange);
+            box-shadow: 0 20px 40px rgba(255, 153, 0, 0.1);
+        }
+
+        .case-card h3 {
+            font-family: 'Fjalla One', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .case-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(255, 153, 0, 0.1);
+            color: var(--amazon-orange);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .view-strategy-btn {
+            margin-top: 25px;
+            padding: 10px 20px;
+            background: transparent;
+            border: 1px solid #444;
+            color: #aaa;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .case-card:hover .view-strategy-btn {
+            background: var(--amazon-orange);
+            color: #000;
+            border-color: var(--amazon-orange);
         }
 
         /* MODAL */
@@ -1105,88 +1169,90 @@
             </div>
         </div>
 
-        <!-- Impact Table -->
-        <div class="impact-table-container">
-            <h3 style="margin-bottom: 20px; font-family: 'Fjalla One'; font-weight: 400;">Workflow Impact</h3>
-            <table class="impact-table">
-                <thead>
-                    <tr>
-                        <th width="40%">Action Taken</th>
-                        <th width="30%">Metric Impact</th>
-                        <th width="30%">Result</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Listing Audit & SEO</td>
-                        <td>Conversion Rate</td>
-                        <td class="impact-val">+18%</td>
-                    </tr>
-                    <tr>
-                        <td>Negative Keyword Mining</td>
-                        <td>Wasted Spend</td>
-                        <td class="impact-val">-22%</td>
-                    </tr>
-                    <tr>
-                        <td>Bid Optimization</td>
-                        <td>Average ACoS</td>
-                        <td class="impact-val">-15%</td>
-                    </tr>
-                    <tr>
-                        <td>Keyword Graduation</td>
-                        <td>Total Sales</td>
-                        <td class="impact-val">+30%</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
     </section>
 
-    <!-- FEATURED CASE STUDY -->
+    <!-- FEATURED CASE STUDIES -->
     <section id="case" class="reveal">
         <div class="section-title">
-            <h2>Featured PPC Case Study</h2>
+            <h2>PPC Case Studies</h2>
             <div class="divider"></div>
         </div>
-        <div class="card featured">
-            <h3>Sponsored Products Optimization (Mock Project)</h3>
-            <p style="margin-bottom: 5px;"><strong>Scenario:</strong> High-spend campaign with bleeding efficiency.</p>
-            <p style="font-size: 0.9rem; color: #888; margin-bottom: 20px;">Data Reference: *Based on typical
-                optimization of a 'Broad Match' bleeding campaign over 30 days.*</p>
 
-            <div class="comparison-grid">
-                <!-- ACoS -->
-                <div class="comp-card">
-                    <div class="comp-metric">ACoS</div>
-                    <div class="comp-values">
-                        <span class="val-before">48%</span>
-                        <span class="val-arrow">→</span>
-                        <span class="val-after">26%</span>
-                    </div>
-                    <div class="comp-note">Profitable</div>
-                </div>
+        <div class="case-grid">
+            <!-- CASE 1: SPATULA -->
+            <div class="case-card">
+                <div>
+                    <span class="case-tag">Spatula Set</span>
+                    <h3>ROI Recovery (Broad Match Rescue)</h3>
+                    <p style="font-size: 0.9rem; color: #888; margin-bottom: 20px;">Optimized a bleeding campaign by
+                        shifting focus from generic 'Kitchen' terms to high-intent product specific keywords.</p>
 
-                <!-- ROAS -->
-                <div class="comp-card">
-                    <div class="comp-metric">ROAS</div>
-                    <div class="comp-values">
-                        <span class="val-before">2.1x</span>
-                        <span class="val-arrow">→</span>
-                        <span class="val-after">3.8x</span>
+                    <div class="comparison-grid">
+                        <div class="comp-card">
+                            <div class="comp-metric">ACoS</div>
+                            <div class="comp-values"><span class="val-before">48%</span><span
+                                    class="val-arrow">→</span><span class="val-after">26%</span></div>
+                        </div>
+                        <div class="comp-card">
+                            <div class="comp-metric">ROAS</div>
+                            <div class="comp-values"><span class="val-before">2.1x</span><span
+                                    class="val-arrow">→</span><span class="val-after">3.8x</span></div>
+                        </div>
                     </div>
-                    <div class="comp-note">+80% Return</div>
                 </div>
+                <button class="view-strategy-btn" onclick="openModal(this, 'case_spatula.html')">View Full
+                    Strategy</button>
+            </div>
 
-                <!-- CPC -->
-                <div class="comp-card">
-                    <div class="comp-metric">CPC</div>
-                    <div class="comp-values">
-                        <span class="val-before">$1.25</span>
-                        <span class="val-arrow">→</span>
-                        <span class="val-after">$0.92</span>
+            <!-- CASE 2: DOG LEASH -->
+            <div class="case-card">
+                <div>
+                    <span class="case-tag">Pet Supplies</span>
+                    <h3>Gap-Fill Strategy (Attack & Defense)</h3>
+                    <p style="font-size: 0.9rem; color: #888; margin-bottom: 20px;">Identified 'Heavy Duty' and
+                        'Reflective' gaps in existing listing. Built specialized target groups to capture missing
+                        demand.</p>
+
+                    <div class="comparison-grid">
+                        <div class="comp-card">
+                            <div class="comp-metric">Conv. Rate</div>
+                            <div class="comp-values"><span class="val-before">8%</span><span
+                                    class="val-arrow">→</span><span class="val-after">14%</span></div>
+                        </div>
+                        <div class="comp-card">
+                            <div class="comp-metric">ACoS</div>
+                            <div class="comp-values"><span class="val-before">35%</span><span
+                                    class="val-arrow">→</span><span class="val-after">22%</span></div>
+                        </div>
                     </div>
-                    <div class="comp-note">Optimized Bid</div>
                 </div>
+                <button class="view-strategy-btn" onclick="openModal(this, 'case_leash.html')">View Full
+                    Strategy</button>
+            </div>
+
+            <!-- CASE 3: SUPPLEMENTS -->
+            <div class="case-card">
+                <div>
+                    <span class="case-tag">Health (Hard Mode)</span>
+                    <h3>Compliance & Conquest Attack</h3>
+                    <p style="font-size: 0.9rem; color: #888; margin-bottom: 20px;">Resolved FDA compliance risks while
+                        aggressively outbidding major brands for 'Symptom-Based' search intent.</p>
+
+                    <div class="comparison-grid">
+                        <div class="comp-card">
+                            <div class="comp-metric">Wasted Spend</div>
+                            <div class="comp-values"><span class="val-before">100%</span><span
+                                    class="val-arrow">→</span><span class="val-after">-45%</span></div>
+                        </div>
+                        <div class="comp-card">
+                            <div class="comp-metric">ROAS</div>
+                            <div class="comp-values"><span class="val-before">1.5x</span><span
+                                    class="val-arrow">→</span><span class="val-after">2.6x</span></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="view-strategy-btn" onclick="openModal(this, 'case_supplement.html')">View Full
+                    Strategy</button>
             </div>
         </div>
     </section>
@@ -1240,7 +1306,6 @@
     <div class="modal" id="certModal">
         <span class="modal-close" onclick="closeModal()">✕</span>
         <iframe id="modalFrame"></iframe>
-        <a id="modalDownloadBtn" href="#" target="_blank" class="modal-download-btn">Click to Download</a>
     </div>
 
     <script>
@@ -1274,28 +1339,20 @@
             // 1. Set iframe source
             frame.src = src;
 
-            // 2. Get Card Position
+            // 2. Show Modal
             const rect = element.getBoundingClientRect();
 
-            // 3. Position Modal initially directly ON TOP of the card
-            modal.style.display = 'block';
-            modal.style.left = rect.left + 'px';
-            modal.style.top = rect.top + 'px';
-            modal.style.width = rect.width + 'px';
-            modal.style.height = rect.height + 'px';
-            modal.classList.remove('active-state');
+            // If already active, skip animation positioning
+            if (!modal.classList.contains('active-state')) {
+                modal.style.display = 'block';
+                modal.style.left = rect.left + 'px';
+                modal.style.top = rect.top + 'px';
+                modal.style.width = rect.width + 'px';
+                modal.style.height = rect.height + 'px';
 
-            // Set Data for Download Button
-            const downloadBtn = document.getElementById('modalDownloadBtn');
-            // Helper: switch '/preview' to '/view' for a better download page experience
-            const viewLink = src.replace('/preview', '/view');
-            downloadBtn.href = viewLink;
-
-            // 4. Force reflow
-            void modal.offsetWidth;
-
-            // 5. Expand
-            modal.classList.add('active-state');
+                void modal.offsetWidth; // Force reflow
+                modal.classList.add('active-state');
+            }
         }
         function closeModal() {
             const modal = document.getElementById('certModal');
