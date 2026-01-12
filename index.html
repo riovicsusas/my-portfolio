@@ -943,6 +943,8 @@
             opacity: 0;
             transition: opacity 0.3s 0.2s, transform 0.2s;
             z-index: 2001;
+            display: none;
+            /* Controlled by JS */
         }
 
         .modal-download-btn:hover {
@@ -1003,7 +1005,7 @@
 
                 <!-- Resume Button -->
                 <a href="javascript:void(0)"
-                    onclick="openModal(this, 'https://drive.google.com/file/d/1YZ1boOIFChmvGIepWqDBGJka_hHQzjA0/preview')"
+                    onclick="openModal(this, 'https://drive.google.com/file/d/1YZ1boOIFChmvGIepWqDBGJka_hHQzjA0/preview', 'https://drive.google.com/uc?export=download&id=1YZ1boOIFChmvGIepWqDBGJka_hHQzjA0')"
                     class="resume-btn">RESUME</a>
             </div>
 
@@ -1021,13 +1023,13 @@
         </div>
         <div class="grid" style="margin-bottom:40px;">
             <div class="card cert-card"
-                onclick="openModal(this, 'https://drive.google.com/file/d/1BPuqB60v5pRI3mcuDn-_jSG2X3mgGs_3/preview')">
+                onclick="openModal(this, 'https://drive.google.com/file/d/1BPuqB60v5pRI3mcuDn-_jSG2X3mgGs_3/preview', 'https://drive.google.com/uc?export=download&id=1BPuqB60v5pRI3mcuDn-_jSG2X3mgGs_3')">
                 <h3>Amazon Sponsored Ads – Basic</h3>
                 <p>Foundational certification covering campaign setup, targeting, and performance metrics.</p>
                 <div class="view-indicator">↗ View Certificate</div>
             </div>
             <div class="card cert-card"
-                onclick="openModal(this, 'https://drive.google.com/file/d/1gxojFPeYYVyxBkq9gLaCBll1z91SfccC/preview')">
+                onclick="openModal(this, 'https://drive.google.com/file/d/1gxojFPeYYVyxBkq9gLaCBll1z91SfccC/preview', 'https://drive.google.com/uc?export=download&id=1gxojFPeYYVyxBkq9gLaCBll1z91SfccC')">
                 <h3>Amazon Sponsored Ads – Advanced</h3>
                 <p>Advanced optimization strategies, scaling techniques, and data-driven bid management.</p>
                 <div class="view-indicator">↗ View Certificate</div>
@@ -1306,6 +1308,8 @@
     <div class="modal" id="certModal">
         <span class="modal-close" onclick="closeModal()">✕</span>
         <iframe id="modalFrame"></iframe>
+        <!-- Added Download Button -->
+        <a id="modalDownloadBtn" class="modal-download-btn" target="_blank">Click to Download</a>
     </div>
 
     <script>
@@ -1332,14 +1336,25 @@
             const menu = document.getElementById('menu');
             menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
         }
-        function openModal(element, src) {
+
+        // Updated openModal to handle download links
+        function openModal(element, src, downloadSrc = null) {
             const modal = document.getElementById('certModal');
             const frame = document.getElementById('modalFrame');
+            const downloadBtn = document.getElementById('modalDownloadBtn');
 
             // 1. Set iframe source
             frame.src = src;
 
-            // 2. Show Modal
+            // 2. Set download button visibility and link
+            if (downloadSrc) {
+                downloadBtn.href = downloadSrc;
+                downloadBtn.style.display = 'block';
+            } else {
+                downloadBtn.style.display = 'none';
+            }
+
+            // 3. Show Modal
             const rect = element.getBoundingClientRect();
 
             // If already active, skip animation positioning
@@ -1354,6 +1369,7 @@
                 modal.classList.add('active-state');
             }
         }
+
         function closeModal() {
             const modal = document.getElementById('certModal');
             const frame = document.getElementById('modalFrame');
