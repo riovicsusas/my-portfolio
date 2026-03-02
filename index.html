@@ -790,6 +790,212 @@
             transform: scale(1.05);
         }
 
+        /* TOOL DATA TABLE STYLES */
+        .tool-data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.75rem;
+            margin-top: 15px;
+            text-align: left;
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+
+        .tool-data-table th {
+            background: #1a1a1a;
+            color: var(--amazon-orange);
+            padding: 10px;
+            font-weight: 600;
+            border-bottom: 2px solid #333;
+            text-transform: uppercase;
+        }
+
+        .tool-data-table td {
+            padding: 8px 10px;
+            border-bottom: 1px solid #222;
+            color: #ccc;
+        }
+
+        .tool-data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .hl-green {
+            color: #4ade80;
+            font-weight: 600;
+        }
+
+        .hl-orange {
+            color: var(--amazon-orange);
+            font-weight: 600;
+        }
+
+        .hl-red {
+            color: #ff4d4d;
+        }
+
+        .modal-content-container {
+            width: min(90%, 800px);
+            background: #141414;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #333;
+            position: relative;
+        }
+
+        .modal-header {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 15px;
+        }
+
+        .modal-header h2 {
+            font-family: 'Fjalla One', sans-serif;
+            color: var(--amazon-orange);
+        }
+
+        /* FAQ SECTION */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #141414;
+            border: 1px solid #333;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .faq-question:hover {
+            background: #1a1a1a;
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 0 25px 20px 25px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+            color: var(--amazon-orange);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* AUDIT SECTION */
+        .audit-card {
+            background: linear-gradient(135deg, #1a1a1a, #0b0b0b);
+            border: 2px solid var(--amazon-orange);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(255, 153, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .audit-card::after {
+            content: 'LIMITED';
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: #ff4d4d;
+            color: #fff;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        /* SVG CHART STYLES */
+        .chart-svg {
+            width: 100%;
+            height: 120px;
+            margin-top: 20px;
+        }
+
+        .chart-bar-bg {
+            fill: #222;
+        }
+
+        .chart-bar-val {
+            fill: var(--amazon-orange);
+            transition: 1s ease;
+        }
+
+        .chart-text {
+            fill: #888;
+            font-size: 10px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* PHILOSOPHY STYLES */
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        .quote-icon {
+            font-size: 4rem;
+            color: var(--amazon-orange);
+            opacity: 0.3;
+            margin-bottom: -20px;
+        }
+
+        /* TOOL DEEP DIVE BUTTON */
+        .tool-btn {
+            margin-top: 15px;
+            padding: 8px 16px;
+            background: rgba(255, 153, 0, 0.1);
+            border: 1px solid var(--amazon-orange);
+            color: var(--amazon-orange);
+            border-radius: 6px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .tool-btn:hover {
+            background: var(--amazon-orange);
+            color: #000;
+        }
+
         /* Toast notification */
         #toast {
             visibility: hidden;
@@ -986,8 +1192,10 @@
             <a href="#" onclick="window.scrollTo(0,0); toggleMenu()">About Me</a>
             <a href="#certifications" data-section="certifications" onclick="toggleMenu()">Certifications</a>
             <a href="#tools" data-section="tools" onclick="toggleMenu()">Tools</a>
+            <a href="#philosophy" data-section="philosophy" onclick="toggleMenu()">Philosophy</a>
             <a href="#skills" data-section="skills" onclick="toggleMenu()">Core Skills</a>
             <a href="#glossary" data-section="glossary" onclick="toggleMenu()">KPIs</a>
+            <a href="#faq" data-section="faq" onclick="toggleMenu()">FAQ</a>
             <a href="#strategy" data-section="strategy" onclick="toggleMenu()">PPC Strategy</a>
             <a href="#case" data-section="case" onclick="toggleMenu()">Case Study</a>
         </div>
@@ -1048,6 +1256,9 @@
                     <rect x="3" y="3" width="18" height="18" rx="2" />
                     <path d="M7 14l3-3 4 4 3-5" />
                 </svg>
+                <div style="margin-top: 15px;">
+                    <button class="tool-btn" onclick="openDataModal('ads-console')">View Campaign Metrics</button>
+                </div>
             </div>
             <div class="card tool-card" style="text-align:center;">
                 <h3>Microsoft Excel</h3>
@@ -1056,6 +1267,9 @@
                     <rect x="3" y="3" width="18" height="18" rx="2" />
                     <path d="M9 9l6 6M15 9l-6 6" />
                 </svg>
+                <div style="margin-top: 15px;">
+                    <button class="tool-btn" onclick="openDataModal('excel-analysis')">View Pivot Analysis</button>
+                </div>
             </div>
             <div class="card tool-card" style="text-align:center;">
                 <h3>Helium 10</h3>
@@ -1064,6 +1278,34 @@
                     <circle cx="12" cy="12" r="9" />
                     <path d="M12 7v10M7 12h10" />
                 </svg>
+                <div style="margin-top: 15px;">
+                    <button class="tool-btn" onclick="openDataModal('helium-10')">View Cerebro Data</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROFESSIONAL PHILOSOPHY (SOCIAL PROOF) -->
+    <section id="philosophy" class="reveal">
+        <div class="section-title">
+            <h2>Professional Philosophy</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="philosophy-grid">
+            <div style="text-align: center;">
+                <div class="quote-icon">“</div>
+                <h3 style="font-family: 'Fjalla One', sans-serif; font-size: 2rem; color: #fff;">Data doesn't lie, but
+                    it needs a storyteller.</h3>
+            </div>
+            <div class="card">
+                <p style="font-size: 1.1rem; max-width: 100%;">
+                    I believe that Amazon PPC isn't just about spending money—it's about buying <strong>data</strong> to
+                    make better choices. My approach combines <strong>aggressive keyword mining</strong> with a
+                    <strong>defensive profit protection</strong> system.
+                    <br><br>
+                    Every click should have a purpose, and every dollar of wasted spend is a lesson waiting to be
+                    analyzed in Excel. I don't just manage ads; I manage <strong>brand trajectories</strong>.
+                </p>
             </div>
         </div>
     </section>
@@ -1112,6 +1354,90 @@
             <div class="kpi-card">
                 <h3>CVR</h3>
                 <p>(Orders ÷ Clicks) × 100</p>
+            </div>
+        </div>
+
+        <!-- FREE AUDIT LEAD MAGNET -->
+        <div style="margin-top: 80px;">
+            <div class="audit-card reveal">
+                <h2 style="font-family: 'Fjalla One', sans-serif; font-size: 3rem; margin-bottom: 15px;">Stop Wasting
+                    Your Ad Budget.</h2>
+                <p style="margin: 0 auto 10px auto; font-size: 1.2rem; color: #ccc;">Get a <strong>High-Trust PPC Health
+                        Check</strong> without sharing your account access.</p>
+                <p style="margin: 0 auto 30px auto; font-size: 0.95rem; color: #888; max-width: 600px;">Simply export
+                    your 60-day Search Term Report, and I'll record a personalized video audit identifying your Keyword
+                    Leakage and Bid Inefficiencies.</p>
+
+                <div class="workflow-container" style="margin-bottom: 40px; gap: 40px;">
+                    <div class="workflow-step" style="width: 220px;">
+                        <div class="workflow-icon">📊</div>
+                        <h4 style="color: #fff; margin-bottom: 5px;">1. Export Report</h4>
+                        <p style="font-size: 0.8rem;">Download your 60-day Search Term Excel file.</p>
+                    </div>
+                    <div class="workflow-arrow" style="transform: rotate(0deg);">→</div>
+                    <div class="workflow-step" style="width: 220px;">
+                        <div class="workflow-icon">🔒</div>
+                        <h4 style="color: #fff; margin-bottom: 5px;">2. Secure Send</h4>
+                        <h4 style="color: #fff; margin-bottom: 5px;">Email the file—no access needed.</h4>
+                    </div>
+                    <div class="workflow-arrow" style="transform: rotate(0deg);">→</div>
+                    <div class="workflow-step" style="width: 220px;">
+                        <div class="workflow-icon">🎬</div>
+                        <h4 style="color: #fff; margin-bottom: 5px;">3. Video Audit</h4>
+                        <p style="font-size: 0.8rem;">Get a video breakdown of your fixing plan.</p>
+                    </div>
+                </div>
+
+                <div class="cta-buttons" style="margin-top: 30px;">
+                    <button class="btn btn-primary" onclick="copyEmail()">Claim My Privacy-First Audit</button>
+                    <button class="btn btn-secondary" onclick="openDataModal('download-guide')">View Download
+                        Guide</button>
+                </div>
+                <p style="margin-top: 20px; font-size: 0.8rem; color: #666;">🛡️ 100% Confidential · No Account Login
+                    Required · NDA Friendly</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="reveal">
+        <div class="section-title">
+            <h2>PPC Expert Insights</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    What is your process for reducing high ACoS?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    My recovery process starts with <strong>Negative Keyword Mining</strong> to cut immediate waste,
+                    followed by <strong>Day-Parting</strong> analysis to ensure spend happens during "Power Hours," and
+                    finally, a <strong>Bid-to-Value</strong> adjustment based on historical conversion rates.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    How do you handle a new product launch?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    I use a 3-step launch funnel: 1. <strong>Automated Discovery</strong> for search term harvesting. 2.
+                    <strong>Market-Share Attack</strong> using competitor ASIN targeting (PAT). 3. <strong>Aggressive
+                        Exact Match</strong> scale on high-relevance seed keywords discovered in step 1.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    Why use Manual campaigns over Automatic?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Automatic campaigns are for <i>discovery</i>; Manual campaigns are for <i>profit</i>. Manual gives
+                    us control over bids, placements, and exact search term matching, which is the only way to achieve a
+                    stable, low ACoS long-term.
+                </div>
             </div>
         </div>
     </section>
@@ -1201,6 +1527,20 @@
                                     class="val-arrow">→</span><span class="val-after">3.8x</span></div>
                         </div>
                     </div>
+
+                    <!-- SVG Chart Representation -->
+                    <svg class="chart-svg" viewBox="0 0 200 100">
+                        <text x="0" y="10" class="chart-text">ACoS Transformation</text>
+                        <!-- Before -->
+                        <rect x="10" y="25" width="80" height="40" rx="4" class="chart-bar-bg" />
+                        <rect x="10" y="25" width="80" height="40" rx="4" class="chart-bar-val"
+                            style="width: 76px; opacity: 0.4;" />
+                        <text x="15" y="50" class="chart-text" style="fill:#fff">Before: 48%</text>
+                        <!-- After -->
+                        <rect x="100" y="25" width="80" height="40" rx="4" class="chart-bar-bg" />
+                        <rect x="100" y="25" width="80" height="40" rx="4" class="chart-bar-val" style="width: 41px;" />
+                        <text x="105" y="50" class="chart-text" style="fill:#fff">After: 26%</text>
+                    </svg>
                 </div>
                 <button class="view-strategy-btn" onclick="openModal(this, 'case_spatula.html')">View Full
                     Strategy</button>
@@ -1227,6 +1567,15 @@
                                     class="val-arrow">→</span><span class="val-after">22%</span></div>
                         </div>
                     </div>
+
+                    <!-- SVG Chart Representation -->
+                    <svg class="chart-svg" viewBox="0 0 200 100">
+                        <text x="0" y="10" class="chart-text">Conversion Rate Boost</text>
+                        <rect x="10" y="25" width="180" height="15" rx="4" class="chart-bar-bg" />
+                        <rect x="10" y="25" width="70" height="15" rx="4" class="chart-bar-val" style="opacity: 0.5;" />
+                        <rect x="10" y="25" width="130" height="15" rx="4" class="chart-bar-val" />
+                        <text x="10" y="55" class="chart-text">8% Base → 14% Optimized (+75% Improvement)</text>
+                    </svg>
                 </div>
                 <button class="view-strategy-btn" onclick="openModal(this, 'case_leash.html')">View Full
                     Strategy</button>
@@ -1308,9 +1657,177 @@
     <div class="modal" id="certModal">
         <span class="modal-close" onclick="closeModal()">✕</span>
         <iframe id="modalFrame"></iframe>
-        <!-- Added Download Button -->
+
+        <!-- DATA MODAL CONTENT (HIDDEN BY DEFAULT) -->
+        <div id="dataModalContent" class="modal-content-container" style="display: none;">
+            <div id="dataContentBody"></div>
+        </div>
+
         <a id="modalDownloadBtn" class="modal-download-btn" target="_blank">Click to Download</a>
     </div>
+
+    <!-- DATA TEMPLATES (HIDDEN) -->
+    <template id="template-ads-console">
+        <div class="modal-header">
+            <h2>Amazon Ads Console Impact</h2>
+            <p>Direct view of campaign-level performance after keyword graduation.</p>
+        </div>
+        <table class="tool-data-table">
+            <thead>
+                <tr>
+                    <th>Campaign Type</th>
+                    <th>Spend</th>
+                    <th>Sales</th>
+                    <th>ACoS</th>
+                    <th>ROAS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>SP - Exact (Graduated)</td>
+                    <td>$1,240</td>
+                    <td>$6,850</td>
+                    <td class="hl-green">18.1%</td>
+                    <td>5.52x</td>
+                </tr>
+                <tr>
+                    <td>SP - Auto Discovery</td>
+                    <td>$450</td>
+                    <td>$1,120</td>
+                    <td class="hl-orange">40.1%</td>
+                    <td>2.48x</td>
+                </tr>
+                <tr>
+                    <td>SB - Video Scale</td>
+                    <td>$890</td>
+                    <td>$3,400</td>
+                    <td class="hl-green">26.1%</td>
+                    <td>3.82x</td>
+                </tr>
+                <tr>
+                    <td>Total Portfolio</td>
+                    <td>$2,580</td>
+                    <td>$11,370</td>
+                    <td class="hl-green">22.6%</td>
+                    <td class="hl-orange">4.40x</td>
+                </tr>
+            </tbody>
+        </table>
+    </template>
+
+    <template id="template-excel-analysis">
+        <div class="modal-header">
+            <h2>Excel Pivot: Search Term Waste Mining</h2>
+            <p>Identifying "Bleeding" terms that have high clicks but 0 conversions.</p>
+        </div>
+        <table class="tool-data-table">
+            <thead>
+                <tr>
+                    <th>Search Term</th>
+                    <th>Clicks</th>
+                    <th>Spend</th>
+                    <th>Orders</th>
+                    <th>Action Taken</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>"generic kitchen tool"</td>
+                    <td>184</td>
+                    <td>$212.40</td>
+                    <td class="hl-red">0</td>
+                    <td class="hl-orange">Negative Exact</td>
+                </tr>
+                <tr>
+                    <td>"spatula for cast iron"</td>
+                    <td>62</td>
+                    <td>$84.10</td>
+                    <td>11</td>
+                    <td class="hl-green">Graduated to Manual</td>
+                </tr>
+                <tr>
+                    <td>"best cooking set 2026"</td>
+                    <td>95</td>
+                    <td>$115.00</td>
+                    <td class="hl-red">1</td>
+                    <td class="hl-orange">Bid Reduction (50%)</td>
+                </tr>
+            </tbody>
+        </table>
+    </template>
+
+    <template id="template-helium-10">
+        <div class="modal-header">
+            <h2>Helium 10: Reverse ASIN Gap Analysis</h2>
+            <p>Discovering high-relevance keywords where competitors are ranking but we are missing.</p>
+        </div>
+        <table class="tool-data-table">
+            <thead>
+                <tr>
+                    <th>Keyword</th>
+                    <th>Search Volume</th>
+                    <th>Comp Rank (Avg)</th>
+                    <th>Our Rank</th>
+                    <th>Priority</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>"non-stick spatula"</td>
+                    <td>12,400</td>
+                    <td>4.2</td>
+                    <td class="hl-red">84</td>
+                    <td class="hl-orange">CRITICAL (Top-of-Search)</td>
+                </tr>
+                <tr>
+                    <td>"heat resistant flipper"</td>
+                    <td>2,850</td>
+                    <td>12.5</td>
+                    <td class="hl-red">NR</td>
+                    <td class="hl-green">Product Targeting (PAT)</td>
+                </tr>
+                <tr>
+                    <td>"silicone turner"</td>
+                    <td>8,200</td>
+                    <td>3.1</td>
+                    <td class="hl-green">2</td>
+                    <td>Maintain Position</td>
+                </tr>
+            </tbody>
+        </table>
+    </template>
+
+    <template id="template-download-guide">
+        <div class="modal-header">
+            <h2>How to Download Your Search Term Report</h2>
+            <p>Follow these 5 steps to get your data securely from Amazon Seller Central.</p>
+        </div>
+        <div style="text-align: left; color: #ccc; line-height: 1.8;">
+            <ol style="padding-left: 20px;">
+                <li><strong>Log in</strong> to your <span class="hl-orange">Amazon Seller Central</span> account.</li>
+                <li>Go to the <strong>Advertising</strong> tab and select <strong>Campaign Manager</strong>.</li>
+                <li>In the left-hand menu, click on <strong>Measurement & Reporting</strong> then <strong>Advertising
+                        Reports</strong>.</li>
+                <li>Click <strong>Create Report</strong> and select:
+                    <ul style="list-style: disc; padding-left: 30px; margin-top: 10px;">
+                        <li>Report Type: <span class="hl-green">Search Term</span></li>
+                        <li>Campaign Type: <span class="hl-green">Sponsored Products</span></li>
+                        <li>Time Unit: <strong>Summary</strong></li>
+                        <li>Report Period: <strong>Last 60 Days</strong></li>
+                    </ul>
+                </li>
+                <li style="margin-top: 10px;">Click <strong>Run Report</strong>. Once processed, click
+                    <strong>Download</strong> and send the .xlsx file to <span
+                        class="hl-orange">riovicmatthew@gmail.com</span>.</li>
+            </ol>
+            <div
+                style="margin-top: 20px; padding: 15px; background: rgba(255,153,0,0.1); border-radius: 8px; border-left: 4px solid var(--amazon-orange);">
+                <p style="font-size: 0.85rem;"><strong>Pro Tip:</strong> You can hide the "Campaign Name" or "ASIN"
+                    columns if you prefer. I only need the <i>Search Terms</i>, <i>Spend</i>, and <i>Sales</i> data to
+                    provide your audit.</p>
+            </div>
+        </div>
+    </template>
 
     <script>
         function updateTime() {
@@ -1370,15 +1887,41 @@
             }
         }
 
+        function openDataModal(type) {
+            const modal = document.getElementById('certModal');
+            const frame = document.getElementById('modalFrame');
+            const downloadBtn = document.getElementById('modalDownloadBtn');
+            const dataContainer = document.getElementById('dataModalContent');
+            const dataBody = document.getElementById('dataContentBody');
+            const template = document.getElementById(`template-${type}`);
+
+            // 1. Hide unwanted elements
+            frame.style.display = 'none';
+            downloadBtn.style.display = 'none';
+
+            // 2. Populate and show data
+            dataBody.innerHTML = template.innerHTML;
+            dataContainer.style.display = 'block';
+
+            // 3. Open Modal with simple fade-in
+            modal.style.display = 'flex';
+            modal.style.background = 'rgba(0,0,0,0.95)';
+            void modal.offsetWidth;
+            modal.classList.add('active-state');
+        }
+
         function closeModal() {
             const modal = document.getElementById('certModal');
             const frame = document.getElementById('modalFrame');
+            const dataContainer = document.getElementById('dataModalContent');
 
             modal.classList.remove('active-state');
 
             setTimeout(() => {
                 modal.style.display = 'none';
                 frame.src = '';
+                frame.style.display = 'block'; // Reset for certs
+                dataContainer.style.display = 'none';
             }, 400);
         }
     </script>
